@@ -29,7 +29,7 @@ body {
     5. Improve text rendering
   */
 body {
-    line-height: 1.5;
+    line-height: 1;
     -webkit-font-smoothing: antialiased;
 }
 /*
@@ -63,6 +63,7 @@ h4,
 h5,
 h6 {
     overflow-wrap: break-word;
+    line-height: 1;
 }
 /*
     9. Create a root stacking context
@@ -107,32 +108,53 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     grid-gap: 1.5rem;
-    grid-row-gap: 4rem;
     padding: 1rem;
     margin: 0 5rem;
 
     .card {
         // outline: 1px solid blanchedalmond;
-        background: #000;
+        // background: #000;
+        background: transparent;
         position: relative;
-        height: 19rem;
+        height: 20rem;
         border-radius: 0.5rem;
-        display: flex;
-        justify-content: start;
-        align-items: flex-end;
+
         padding: 1rem;
 
+        // outline: 1px solid #f7fdfe;
+
+        .card__content {
+            color: #f7fdfe;
+            background: #000000;
+            border-radius: 0.5rem;
+            position: absolute;
+            top: 2rem;
+            right: 0;
+            width: 90%;
+            height: calc(100% - 2rem);
+
+            display: flex;
+            justify-content: start;
+            align-items: flex-end;
+            padding-left: 1rem;
+            padding-bottom: 1rem;
+
+            // outline: 1px solid yellow;
+            overflow: hidden;
+
+            transition: all 0.2s ease-in-out;
+        }
+
         .card__img {
-            width: 100%;
-            height: 17rem;
+            width: 90%;
+            height: 16rem;
             border-radius: 0.3rem;
-            // outline: 1px solid red;
-            // ring with blur
-            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+            // outline: 1px solid blue;
             overflow: hidden;
             position: absolute;
-            top: -0.5rem;
-            left: -0.5rem;
+            top: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
 
             img {
                 object-fit: cover;
@@ -141,14 +163,15 @@ body {
             }
         }
 
-        .card__content {
-            color: #f7fdfe;
-            position: relative;
-            outline: 1px solid #f7fdfe;
-            overflow: hidden;
+        &.hovered {
+            // outline: 1px solid #f7fdfe;
+            cursor: pointer;
 
-            .tags {
-                position: absolute;
+            .card__content {
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
             }
         }
     }
