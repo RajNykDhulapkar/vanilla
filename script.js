@@ -19,57 +19,66 @@ const tags = {
 const projectList = [
     {
         id: 1,
-        title: "Lorem ipsum dolor sit ",
+        title: "Theme color picker with CSS :has()",
         tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY],
-        image: "assets/screenshot-1.png",
+        image: "theme-color-picker/screenshot.png",
+        link: "theme-color-picker/index.html"
     },
     {
         id: 2,
         title: "Amet consectetur adipisicing elit Lorem ipsum dolor site",
         tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.BOOTSTRAP],
         image: "assets/screenshot-4.png",
+        link: "https://www.google.com"
     },
     {
         id: 3,
         title: "Aliquam consectetur",
         tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.BOOTSTRAP, tags.ALPINE],
         image: "assets/screenshot-5.png",
+        link: "https://www.google.com"
     },
     {
         id: 4,
         title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
         tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.BOOTSTRAP, tags.ALPINE, tags.PHP],
         image: "assets/screenshot-3.jpg",
+        link: "https://www.google.com"
     },
     {
         id: 5,
         title: "Lorem ipsum dolor sit",
         tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.BOOTSTRAP, tags.ALPINE],
         image: "assets/screenshot-1.png",
+        link: "https://www.google.com"
     },
     {
         id: 6,
         title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
         tags: [tags.HTML5, tags.JS],
         image: "assets/screenshot-2.jpg",
+        link: "https://www.google.com"
     },
     {
         id: 7,
         title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
         tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.NODEJS, tags.EXPRESS],
         image: "assets/screenshot-1.png",
+        link: "https://www.google.com"
     },
     {
         id: 8,
         title: "Lorem ipsum dolor sit amet ",
         tags: [tags.HTML5, tags.CSS3, tags.JS, tags.EXPRESS, tags.MONGODB],
         image: "assets/screenshot-5.png",
+        link: "https://www.google.com"
     },
     {
         id: 9,
         title: "Lorem ipsum dolor ",
         tags: [tags.HTML5, tags.CSS3, tags.BOOTSTRAP, tags.ALPINE, tags.PHP, tags.MYSQL, tags.REACT],
         image: "assets/screenshot-4.png",
+        link: "https://www.google.com"
     }
 
 ]
@@ -87,21 +96,22 @@ tagsContainer.innerHTML = Object.values(tags).map(tag => (
 
 const content = document.getElementsByClassName("content")[0];
 
-content.innerHTML = projectList.map(project => (
-    `
-        <div class="card" id="card_1">
-            <div class="card__content">
-                <h3 class="card__title">${project.title.length > 23 ? project.title.slice(0, 22) + "..." : project.title}</h3>
-                <div class="tags">
-                ${project.tags.slice(0, 4).map(tag => `<span class="tag">${tag}</span>`).join("\n")}
+content.innerHTML = projectList.map(project => {
+    return `
+         <div class="card" onclick="location.href='${project.link}';">
+                <div class="card__content">
+                    <h3 class="card__title">${project.title.length > 23 ? project.title.slice(0, 22) + "..." : project.title}</h3>
+                    <div class="tags">
+                    ${project.tags.slice(0, 4).map(tag => `<span class="tag">${tag}</span>`).join("\n")}
+                    </div>
                 </div>
+                <picture class="card__img">
+                    <img src="${project.image}" alt="picture-1">
+                </picture>
             </div>
-            <picture class="card__img">
-                <img src="${project.image}" alt="picture-1">
-            </picture>
-        </div>
-    `
-)).join("\n")
+            
+        `;
+}).join("\n")
 
 
 // Execute a function when the user presses a key on the keyboard
