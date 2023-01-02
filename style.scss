@@ -145,6 +145,7 @@ body {
     grid-gap: 1.5rem;
     padding: 1rem;
     margin: 0 5rem;
+    margin-bottom: 2rem;
 
     .card {
         // outline: 1px solid blanchedalmond;
@@ -251,21 +252,55 @@ body {
         margin: 0;
         padding: 0;
     }
+    .search {
+        // outline: 1px solid #f7fdfe;
+        margin: 2rem 1rem;
+        width: calc(100% - 2rem);
+
+        input {
+            width: 100%;
+        }
+    }
+
+    .tags_container {
+        margin: 2rem 1rem;
+        width: calc(100% - 2rem);
+        // outline: 1px solid #f7fdfe;
+        padding: 0;
+    }
     .content {
         // grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
         display: flex;
         flex-direction: column;
         width: 90%;
         // grid-gap: 1.5rem;
-        outline: 1px solid #f7fdfe;
+        // outline: 1px solid #f7fdfe;
         padding: 0rem;
         margin: 0 auto;
+        margin-bottom: 2rem;
     }
 }
 
 @media (hover: none) {
-    body {
-        background: lightblue;
+    // body {
+    //     // background: lightblue;
+    // }
+    .content {
+        .card {
+            .card__content {
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                // padding-left: 3.65rem;
+                padding-left: 1.5rem;
+                padding-bottom: 2.5rem;
+
+                .tags {
+                    opacity: 1;
+                }
+            }
+        }
     }
 }
 
