@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 :root {
   --bg-color: #363636;
 }
@@ -81,7 +82,10 @@ h6 {
 }
 
 body {
-  background-color: var(--bg-color);
+  background: #4c4b4b;
+  background: linear-gradient(to right, #4c4b4b, #2c3e50);
+  color: #f7fdfe;
+  font-family: "Poppins", sans-serif;
   overflow-y: auto;
 }
 
@@ -95,6 +99,7 @@ body {
   background-color: honeydew;
   border-radius: 0.5rem;
   overflow: hidden;
+  color: #000000;
 }
 
 .search input {
@@ -176,10 +181,11 @@ body {
 /* custom scrollbar */
 ::-webkit-scrollbar {
   width: 20px;
+  background: #2c3e50;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+  background: #2c3e50;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -190,5 +196,5 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #f7fdfe;
+  background-color: #ffffff;
 }
