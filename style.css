@@ -233,6 +233,27 @@ body {
   opacity: 1;
 }
 
+@media (max-width: 520px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    outline: 1px solid #f7fdfe;
+    padding: 0rem;
+    margin: 0 auto;
+  }
+}
+
+@media (hover: none) {
+  body {
+    background: lightblue;
+  }
+}
+
 /* custom scrollbar */
 ::-webkit-scrollbar {
   width: 20px;
