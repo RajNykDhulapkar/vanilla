@@ -1,6 +1,109 @@
 // Get the input field
 const input = document.getElementById("searchInput");
 
+const tags = {
+    HTML5: "HTML5",
+    CSS3: "CSS3",
+    JS: "JS",
+    JQUERY: "JQUERY",
+    BOOTSTRAP: "BOOTSTRAP",
+    ALPINE: "ALPINE",
+    PHP: "PHP",
+    MYSQL: "MYSQL",
+    NODEJS: "NODEJS",
+    EXPRESS: "EXPRESS",
+    MONGODB: "MONGODB",
+    REACT: "REACT"
+}
+
+const projectList = [
+    {
+        id: 1,
+        title: "Lorem ipsum dolor sit ",
+        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY],
+        image: "assets/screenshot-1.png",
+    },
+    {
+        id: 2,
+        title: "Amet consectetur adipisicing elit Lorem ipsum dolor site",
+        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.BOOTSTRAP],
+        image: "assets/screenshot-4.png",
+    },
+    {
+        id: 3,
+        title: "Aliquam consectetur",
+        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.BOOTSTRAP, tags.ALPINE],
+        image: "assets/screenshot-5.png",
+    },
+    {
+        id: 4,
+        title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.BOOTSTRAP, tags.ALPINE, tags.PHP],
+        image: "assets/screenshot-3.jpg",
+    },
+    {
+        id: 5,
+        title: "Lorem ipsum dolor sit",
+        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.BOOTSTRAP, tags.ALPINE],
+        image: "assets/screenshot-1.png",
+    },
+    {
+        id: 6,
+        title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        tags: [tags.HTML5, tags.JS],
+        image: "assets/screenshot-2.jpg",
+    },
+    {
+        id: 7,
+        title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.NODEJS, tags.EXPRESS],
+        image: "assets/screenshot-1.png",
+    },
+    {
+        id: 8,
+        title: "Lorem ipsum dolor sit amet ",
+        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.EXPRESS, tags.MONGODB],
+        image: "assets/screenshot-5.png",
+    },
+    {
+        id: 9,
+        title: "Lorem ipsum dolor ",
+        tags: [tags.HTML5, tags.CSS3, tags.BOOTSTRAP, tags.ALPINE, tags.PHP, tags.MYSQL, tags.REACT],
+        image: "assets/screenshot-4.png",
+    }
+
+]
+
+const tagsContainer = document.getElementsByClassName("tags_container")[0];
+
+
+
+tagsContainer.innerHTML = Object.values(tags).map(tag => (
+    `
+    <span class="tag">${tag}</span>
+    `
+)).join("\n")
+
+
+const content = document.getElementsByClassName("content")[0];
+
+content.innerHTML = projectList.map(project => (
+    `
+        <div class="card" id="card_1">
+            <div class="card__content">
+                <h3 class="card__title">${project.title.length > 23 ? project.title.slice(0, 22) + "..." : project.title}</h3>
+                <div class="tags">
+                ${project.tags.slice(0, 4).map(tag => `<span class="tag">${tag}</span>`).join("\n")}
+                </div>
+            </div>
+            <picture class="card__img">
+                <img src="${project.image}" alt="picture-1">
+            </picture>
+        </div>
+    `
+)).join("\n")
+
+
 // Execute a function when the user presses a key on the keyboard
 input.addEventListener("keypress", function (event) {
     // If the user presses the "Enter" key on the keyboard
