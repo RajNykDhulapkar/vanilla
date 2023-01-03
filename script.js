@@ -20,7 +20,7 @@ const projectList = [
     {
         id: 1,
         title: "Theme color picker with CSS :has()",
-        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY],
+        tags: [tags.HTML5, tags.CSS3, tags.JS],
         image: "theme-color-picker/screenshot.png",
         link: "theme-color-picker/index.html"
     },
@@ -109,7 +109,6 @@ content.innerHTML = projectList.map(project => {
                     <img src="${project.image}" alt="picture-1">
                 </picture>
             </div>
-            
         `;
 }).join("\n")
 
