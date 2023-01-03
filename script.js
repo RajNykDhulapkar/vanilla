@@ -26,31 +26,34 @@ const projectList = [
     },
     {
         id: 2,
-        title: "Amet consectetur adipisicing elit Lorem ipsum dolor site",
-        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.BOOTSTRAP],
-        image: "assets/screenshot-4.png",
-        link: "https://www.google.com"
+        title: "Card Hover animation Effect",
+        description: "Css card with hover animation effect, fallback for mobile screens and browsers with touch as primary input, referred project by Kevin Powell",
+        tags: [tags.HTML5, tags.CSS3],
+        image: "assets/cards.png",
+        link: "cards/cards-with-hover-animation-mobile-fallback-kevin-powell/index.html"
     },
     {
         id: 3,
-        title: "Aliquam consectetur",
-        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.BOOTSTRAP, tags.ALPINE],
-        image: "assets/screenshot-5.png",
-        link: "https://www.google.com"
+        title: "Animated Sidebar Navigation",
+        tags: [tags.HTML5, tags.CSS3, tags.JS],
+        image: "assets/animated-sidebar-menu-crop.png",
+        link: "sidebars/animated-side-bar-menu/index.html"
     },
     {
         id: 4,
-        title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.BOOTSTRAP, tags.ALPINE, tags.PHP],
-        image: "assets/screenshot-3.jpg",
-        link: "https://www.google.com"
+        title: "Animated Sliding Login and Sign up",
+        tags: [tags.HTML5, tags.CSS3, tags.JS],
+        image: "assets/animated-sliding-login-n-register-form.png",
+        gif: "assets/animated-sliding-login-n-register-form.gif",
+        link: "login-register-forms/Animated-Login-and-Sign-up/index.html"
     },
     {
         id: 5,
-        title: "Lorem ipsum dolor sit",
+        title: "Bouncy Ball CSS",
+        description: "https://cssdeck.com/labs/f9hdt2zx",
         tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.BOOTSTRAP, tags.ALPINE],
-        image: "assets/screenshot-1.png",
-        link: "https://www.google.com"
+        image: "animations/bouncy-ball-css/capture.png",
+        link: "animations/bouncy-ball-css/index.html"
     },
     {
         id: 6,
@@ -100,13 +103,14 @@ content.innerHTML = projectList.map(project => {
     return `
          <div class="card" onclick="location.href='${project.link}';">
                 <div class="card__content">
-                    <h3 class="card__title">${project.title.length > 23 ? project.title.slice(0, 22) + "..." : project.title}</h3>
+                    <h3  title="${project.title}" class="card__title">${project.title.length > 23 ? project.title.slice(0, 22) + "..." : project.title}</h3>
                     <div class="tags">
                     ${project.tags.slice(0, 4).map(tag => `<span class="tag">${tag}</span>`).join("\n")}
                     </div>
                 </div>
                 <picture class="card__img">
-                    <img src="${project.image}" alt="picture-1">
+                    <img class="${project.gif ? "screenshot" : ""}" src="${project.image}" alt="picture-${project.title}">
+                    ${project.gif ? `<img class="gif" src="${project.gif}" alt="gif-${project.title}">` : ""}
                 </picture>
             </div>
         `;
