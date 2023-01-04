@@ -57,10 +57,11 @@ const projectList = [
     },
     {
         id: 6,
-        title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-        tags: [tags.HTML5, tags.JS],
-        image: "assets/screenshot-2.jpg",
-        link: "https://www.google.com"
+        title: "News homepage",
+        description: "News homepage frontend mentor challenge using html css and js",
+        tags: [tags.HTML5, tags.CSS3, tags.JS],
+        image: "news-homepage-main/capture.png",
+        link: "news-homepage-main/index.html"
     },
     {
         id: 7,

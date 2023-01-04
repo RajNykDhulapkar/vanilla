@@ -1,0 +1,281 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+:root {
+    --breakpoint-mobile: 375px;
+    --breakpoint-desktop: 1440px;
+
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+    --off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+
+    --font-size: 15px;
+    --font-family: "Inter", sans-serif;
+    --font-small: 400;
+    --font-medium: 700;
+    --font-large: 800;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+p {
+    line-height: 1.8;
+    color: var(--dark-grayish-blue);
+}
+
+html {
+    font-size: var(--font-size);
+}
+
+body {
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 4rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
+}
+
+.header nav {
+    display: none;
+    /* opacity: 0; */
+    z-index: -999;
+    transition: all 0.3s ease-in-out;
+}
+
+.header nav.open {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    z-index: 99999999999;
+    background-color: #fff;
+    padding: 1.25rem;
+}
+
+.header nav.open::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 25vw;
+    height: 100%;
+    transform: translateX(-100%);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.header nav.open button {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    width: 2.5rem;
+    align-self: flex-end;
+}
+
+.header nav.open ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 5rem;
+    font-weight: var(--font-medium);
+    color: var(--very-dark-blue);
+}
+
+.header .menu-button button {
+    background: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.showcase {
+    padding: 1.25rem;
+    padding-top: 0;
+}
+
+.showcase h1 {
+    font-size: 2rem;
+    color: var(--very-dark-blue);
+    margin: 1rem 0;
+    font-weight: var(--font-large);
+}
+
+.showcase div:first-child article p {
+    margin-bottom: 1rem;
+}
+
+.showcase div:first-child article button {
+    background-color: var(--soft-red);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 2rem;
+    outline: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: var(--font-medium);
+    transition: all 0.3s ease-in-out;
+}
+
+.showcase div:first-child article button:hover {
+    background-color: var(--very-dark-blue);
+    cursor: pointer;
+}
+
+.showcase > div:last-child {
+    background-color: var(--very-dark-blue);
+    margin-top: 2rem;
+    padding: 1.25rem 1.25rem 0 1.25rem;
+}
+
+.showcase > div:last-child h2 {
+    color: var(--soft-orange);
+}
+
+.showcase > div:last-child article {
+    padding: 1rem 0;
+}
+
+.showcase > div:last-child article:not(:last-child) {
+    border-bottom: 1px solid var(--dark-grayish-blue);
+}
+
+.showcase > div:last-child h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.showcase > div:last-child p {
+    color: var(--grayish-blue);
+}
+
+.showcase > div:last-child h3:hover {
+    color: var(--soft-orange);
+    cursor: pointer;
+}
+
+.cards {
+    padding: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5rem;
+}
+.cards article {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+.cards article img {
+    width: 150px;
+}
+.cards article span {
+    color: var(--dark-grayish-blue);
+    font-weight: var(--font-large);
+    display: block;
+    font-size: 2rem;
+    opacity: 75%;
+}
+
+.cards article h4 {
+    font-size: 1.25rem;
+    color: var(--very-dark-blue);
+    margin: 1rem 0;
+}
+
+.cards article h4:hover {
+    color: var(--soft-red);
+}
+
+@media (min-width: 768px) {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 2rem;
+    }
+}
+
+/* applied only when device width is greater the var(--breakpoint-desktop)  */
+@media (min-width: 1440px) {
+    .header {
+        padding: 2rem 1.25rem;
+    }
+    .header .menu-button {
+        display: none;
+        opacity: 0;
+    }
+
+    .header nav {
+        display: block;
+        color: var(--very-dark-blue);
+        align-items: flex-end;
+        justify-content: flex-end;
+        z-index: 99999999999;
+    }
+
+    .header nav ul {
+        width: fit-content;
+        align-self: flex-end;
+        display: flex;
+        gap: 2rem;
+        font-weight: var(--font-medium);
+    }
+
+    .header nav ul li:hover {
+        cursor: pointer;
+        color: var(--soft-orange);
+    }
+
+    .header nav button {
+        display: none;
+    }
+
+    .showcase {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .showcase h1 {
+        font-size: 3rem;
+    }
+
+    .showcase div:first-child article {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 2rem;
+        place-items: center;
+    }
+    .showcase > div:last-child {
+        margin-top: 0;
+    }
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
