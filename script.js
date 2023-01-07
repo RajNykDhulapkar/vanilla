@@ -65,21 +65,22 @@ const projectList = [
     },
     {
         id: 7,
-        title: "Lorem ipsum dolor sit amet consectetur adipisicing elit",
-        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.JQUERY, tags.NODEJS, tags.EXPRESS],
-        image: "assets/screenshot-1.png",
-        link: "https://www.google.com"
+        title: "Rolling Box Animated Loader",
+        tags: [tags.HTML5, tags.CSS3],
+        image: "assets/box-rolling-loader.png",
+        gif: "assets/box-rolling-loader.gif",
+        link: "loading/rolling-box-animated-loader/index.html"
     },
     {
         id: 8,
-        title: "Lorem ipsum dolor sit amet ",
-        tags: [tags.HTML5, tags.CSS3, tags.JS, tags.EXPRESS, tags.MONGODB],
-        image: "assets/screenshot-5.png",
-        link: "https://www.google.com"
+        title: "SVG Animated Text Effect",
+        tags: [tags.HTML5, tags.CSS3],
+        image: "assets/svg-animated-text-loader.png",
+        link: "loading/svg-animated-text-dev-ed/index.html"
     },
     {
         id: 9,
-        title: "Lorem ipsum dolor ",
+        title: "Lorem ipsum dolor",
         tags: [tags.HTML5, tags.CSS3, tags.BOOTSTRAP, tags.ALPINE, tags.PHP, tags.MYSQL, tags.REACT],
         image: "assets/screenshot-4.png",
         link: "https://www.google.com"
