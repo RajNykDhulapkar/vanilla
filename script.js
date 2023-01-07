@@ -80,10 +80,10 @@ const projectList = [
     },
     {
         id: 9,
-        title: "Lorem ipsum dolor",
-        tags: [tags.HTML5, tags.CSS3, tags.BOOTSTRAP, tags.ALPINE, tags.PHP, tags.MYSQL, tags.REACT],
-        image: "assets/screenshot-4.png",
-        link: "https://www.google.com"
+        title: "Random Password Generator",
+        tags: [tags.HTML5, tags.CSS3, tags.JS],
+        image: "random-password-generator/capture.png",
+        link: "random-password-generator/index.html"
     }
 
 ]
