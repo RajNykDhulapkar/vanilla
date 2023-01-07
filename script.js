@@ -84,7 +84,28 @@ const projectList = [
         tags: [tags.HTML5, tags.CSS3, tags.JS],
         image: "random-password-generator/capture.png",
         link: "random-password-generator/index.html"
-    }
+    },
+    {
+        id: 10,
+        title: "ISS Tracker using leaflet.js",
+        tags: [tags.HTML5, tags.CSS3, tags.JS],
+        image: "random-password-generator/capture.png",
+        link: "iss-tracker/index.html"
+    },
+    {
+        id: 11,
+        title: "Analog Clock using Vanilla JS",
+        tags: [tags.HTML5, tags.CSS3, tags.JS],
+        image: "VanillaJS_Clock/capture.png",
+        link: "VanillaJS_Clock/index.html"
+    },
+    {
+        id: 12,
+        title: "Vanilla JS Calculator",
+        tags: [tags.HTML5, tags.CSS3, tags.JS],
+        image: "VanillaJS_Calculator/capture.png",
+        link: "VanillaJS_Calculator/index.html"
+    },
 
 ]
 
